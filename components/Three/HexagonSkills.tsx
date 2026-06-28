@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Text, OrbitControls } from "@react-three/drei";
+import { Html, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { Cpu, Terminal, CheckCircle2 } from "lucide-react";
 
@@ -95,18 +95,23 @@ function HexagonCard({ name, position }: { name: string; position: [number, numb
         </mesh>
       )}
 
-      <Text
-        position={[0, 0, 0.13]}
-        fontSize={0.16}
-        color={hovered ? "#00FF88" : "#ffffff"}
-        font="https://fonts.gstatic.com/s/spacegrotesk/v15/V8mDoQDjQSkFtoMM3T6r8E797F1K.woff"
-        anchorX="center"
-        anchorY="middle"
-        outlineWidth={0.015}
-        outlineColor={hovered ? "rgba(0, 255, 136, 0.1)" : "rgba(0,0,0,0.5)"}
+      <Html
+        position={[0, 0, 0.14]}
+        center
+        distanceFactor={6}
       >
-        {name}
-      </Text>
+        <span 
+          className={`font-orbitron font-extrabold text-[8px] uppercase tracking-wider select-none px-2 py-0.5 transition-all duration-300 ${
+            hovered ? "text-[#00FF88]" : "text-white"
+          }`}
+          style={{ 
+            textShadow: hovered ? "0 0 10px rgba(0,255,136,0.8)" : "0 0 5px rgba(0,0,0,0.8)", 
+            whiteSpace: "nowrap" 
+          }}
+        >
+          {name}
+        </span>
+      </Html>
     </group>
   );
 }
