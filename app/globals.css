@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-green: #00FF88;
+  --color-neon-green-glow: rgba(0, 255, 136, 0.45);
+  --color-charcoal-light: #111113;
+  --color-charcoal-dark: #070709;
+  --color-charcoal-deep: #050505;
+  --font-sans: var(--font-space-grotesk), sans-serif;
+  --font-orbitron: var(--font-orbitron), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
+}
+
+:root {
+  --neon-green: #00FF88;
+  --background-color: #050505;
+  --foreground-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #111113;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF88;
+  box-shadow: 0 0 10px #00FF88;
+}
+
+/* Luxury Fluid Typography */
+.text-huge-heading {
+  font-family: var(--font-orbitron);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  font-size: clamp(3.2rem, 7.5vw, 5.8rem);
+}
+
+.text-sub-heading {
+  font-family: var(--font-orbitron);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.text-body-custom {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  line-height: 1.75;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+}
+
+.text-card-title {
+  font-family: var(--font-orbitron);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.65rem, 2.8vw, 2.15rem);
+}
+
+/* Glassmorphism panel styling */
+.glass-panel {
+  background: rgba(10, 10, 12, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium Card with 28px rounded corners */
+.glass-card-premium {
+  background: rgba(8, 8, 10, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 45px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-premium:hover {
+  border-color: rgba(0, 255, 136, 0.35);
+  box-shadow: 0 15px 45px 0 rgba(0, 255, 136, 0.08), 0 0 25px rgba(0, 255, 136, 0.15);
+  transform: translateY(-8px);
+}
+
+/* Soft ambient lighting overlay */
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.95);
+  z-index: 998;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.3), 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+.text-glow-strong {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.2);
+}
