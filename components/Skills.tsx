@@ -221,7 +221,7 @@ function CapabilityNode({ index, data, position, isActive, onHover }: NodeProps)
 }
 
 function ConnectorLine({ targetPos, activeColor }: { targetPos: [number, number, number]; activeColor: string }) {
-  const lineRef = useRef<THREE.Line>(null);
+  const lineRef = useRef<any>(null);
 
   useEffect(() => {
     if (lineRef.current) {
